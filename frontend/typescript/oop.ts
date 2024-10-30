@@ -23,7 +23,7 @@ class Employee {
   }
 
   printEmp = (): void => {
-    console.log(`${this.empName}의 나이는 ${this.age} 직업은 ${this.empJob}`);
+    console.log(`${this.empName}의 나이는 ${this._age} 직업은 ${this._empJob}`);
   };
 }
 
