@@ -65,7 +65,12 @@ export function addNewHistory(newHistory) {
 
 export function removeHistory(dateId, itemId) {
   try {
-    store.detailList[dateId] = null;
+    store.detailList[dateId] = store.detailList[dateId].filter((id, amount) => {
+      if (id === Number(itemId)) {
+        store.currentFunds += amount;
+      }
+      return id !== Number(itemId);
+    }).store.detailList[dateId] = null;
 
     updateStorage();
     return true;
